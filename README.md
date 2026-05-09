@@ -1,34 +1,30 @@
 # Azure Infrastructure Terraform - Home Lab
 
-This repository contains Terraform code to deploy basic Azure infrastructure for a home lab environment.
+This repository contains **Terraform IaC** to deploy a secure basic Azure environment for my home lab.
 
 ## Architecture
 - Resource Group
-- Virtual Network + Subnet  
-- Network Security Group (SSH allowed)
-- Public IP
-- Linux Virtual Machine (Ubuntu 22.04)
+- Virtual Network + Subnet
+- Network Security Group (SSH only)
+- Static Public IP
+- Linux Virtual Machine (Ubuntu 22.04 with Docker)
 
 ## Technologies Used
-- Terraform ~> 1.5
-- AzureRM Provider ~> 4.0
+- **Terraform** ~> 1.5
+- **AzureRM Provider** ~> 4.0
 - Ubuntu 22.04 LTS
 
 ## How to Deploy
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/yourusername/azure-infra-terraform.git
+# Clone the repository
+git clone https://github.com/javierafloresgarcia20-png/azure-infra-terraform.git
 cd azure-infra-terraform
 
-# 2. Copy example variables
-cp terraform.tfvars.example terraform.tfvars
+# Copy example variables
+cp terraform.tfvars.example terraform.tfvars   # Then edit if needed
 
-# 3. Initialize Terraform
+# Initialize and deploy
 terraform init
-
-# 4. Review the plan
 terraform plan
-
-# 5. Deploy
 terraform apply
